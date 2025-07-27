@@ -12,10 +12,10 @@ async function setup(page){
     return inventoryPage;
 }
 
-test('Menambahkan inventory ke cart', async ({page},testInfo) =>{
+test.only('Menambahkan inventory ke cart', async ({page},testInfo) =>{
     try {
         const inventoryPage = await setup(page);
-        await inventoryPage.addToCartByNameItem('Sauce Lab Backpack');
+        await inventoryPage.addToCartByNameItem('Sauce Labs Backpack');
         await inventoryPage.addItemCartSuccessfull();
     } catch (error) {
         await attachScreenshot(page, testInfo);

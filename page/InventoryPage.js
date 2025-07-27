@@ -15,6 +15,7 @@ class InventoryPage{
         const item = this.page.locator('.inventory_item', {
             has: this.page.locator('.inventory_item_name', { hasText: name }),
         });
+        const buttonRemove = item.locator('button');
         const buttonAdd = item.locator('button');
         await buttonAdd.click();
         await expect(buttonAdd).toHaveText('Remove');
